@@ -25,6 +25,8 @@ public class LivroBiblioteca {
             preparedStatement.setInt(3, livro.getAno_publicacao());
 
             preparedStatement.execute();
+
+            System.out.println("LIVRO CADASTRADO COM SUCESSO");
         }catch (Exception e){
             e.printStackTrace();
         }finally {
