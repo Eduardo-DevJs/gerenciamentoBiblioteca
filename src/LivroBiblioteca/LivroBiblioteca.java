@@ -115,4 +115,34 @@ public class LivroBiblioteca {
             e.printStackTrace();
         }
     }
+
+    public void deletarLivro(int id){
+        String sql = "DELETE FROM livros WHERE id_livro = ? ";
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+           connection = Conexao.createConnectionMYSQL();
+           preparedStatement = connection.prepareStatement(sql);
+
+           preparedStatement.setInt(1, id);
+
+           preparedStatement.execute();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try{
+                if(preparedStatement != null){
+                    preparedStatement.close();
+                }
+
+                if(connection != null){
+                    connection.close();
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
 }
