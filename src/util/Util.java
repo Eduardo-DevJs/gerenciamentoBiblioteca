@@ -53,7 +53,7 @@ public class Util {
                     System.out.println("Deseja Excluir qual Livro? [ID]");
                     int id = read.nextInt();
 
-                    System.out.println("Tem certeza? [s/n]");
+                    System.out.println("Tem certeza deseja exlcuir livro? [s/n]");
                     char resp = read.next().charAt(0);
 
                     if (resp == 's') {
