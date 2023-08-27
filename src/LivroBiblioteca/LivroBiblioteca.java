@@ -113,6 +113,8 @@ public class LivroBiblioteca {
 
             preparedStatement.execute();
 
+            System.out.println("LIVRO ATUALIZADO COM SUCESSO");
+
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -131,6 +133,9 @@ public class LivroBiblioteca {
            preparedStatement.setInt(1, id);
 
            preparedStatement.execute();
+
+            System.out.println("LIVRO DELETADO COM SUCESSO");
+
         }catch (Exception e){
             e.printStackTrace();
         }finally {
