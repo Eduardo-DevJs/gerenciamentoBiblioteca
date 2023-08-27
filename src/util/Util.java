@@ -19,17 +19,17 @@ public class Util {
             System.out.println("4 - Deletar Livro");
             System.out.println("");
             System.out.print("Digite um opção: ");
-            int option = read.nextInt();
+            int option = Integer.parseInt(read.nextLine());
 
 
             switch (option) {
                 case 1:
                     System.out.println("Titulo do Livro: ");
-                    livro.setTitulo(read.next());
+                    livro.setTitulo(read.nextLine());
                     System.out.println("Autor do Livro: ");
-                    livro.setAutor(read.next());
+                    livro.setAutor(read.nextLine());
                     System.out.println("Ano do Livro: ");
-                    livro.setAno_publicacao(read.nextInt());
+                    livro.setAno_publicacao(Integer.parseInt(read.nextLine()));
 
                     livroBiblioteca.cadastrarLivro(livro);
                     break;
@@ -48,9 +48,9 @@ public class Util {
                     livro.setId_livro(read.nextInt());
 
                     System.out.println("Novo titulo: ");
-                    livro.setTitulo(read.next());
+                    livro.setTitulo(read.nextLine());
                     System.out.println("Novo autor: ");
-                    livro.setAutor(read.next());
+                    livro.setAutor(read.nextLine());
                     System.out.println("Novo ano de publicacao: ");
                     livro.setAno_publicacao(read.nextInt());
 
@@ -61,22 +61,20 @@ public class Util {
                     int id = read.nextInt();
 
                     System.out.println("Tem certeza deseja exlcuir livro? [s/n]");
-                    char resp = read.next().charAt(0);
+                    char resp = read.nextLine().charAt(0);
 
                     if (resp == 's') {
                         livroBiblioteca.deletarLivro(id);
                     } else {
                         System.out.println("Livro não será exluido");
                     }
-
-
                     break;
                 default:
                     System.out.println("OPÇÃO INVALIDA");
             }
 
             System.out.println("Deseja Continuar? [S/N]");
-            res = read.next().charAt(0);
+            res = read.nextLine().charAt(0);
         } while (res != 'n');
     }
 }
