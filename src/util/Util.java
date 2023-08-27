@@ -47,6 +47,13 @@ public class Util {
                     System.out.println("Deseja atualizar qual Livro? [ID]");
                     livro.setId_livro(read.nextInt());
 
+                    System.out.println("Novo titulo: ");
+                    livro.setTitulo(read.next());
+                    System.out.println("Novo autor: ");
+                    livro.setAutor(read.next());
+                    System.out.println("Novo ano de publicacao: ");
+                    livro.setAno_publicacao(read.nextInt());
+
                     livroBiblioteca.atualizarLivros(livro);
                     break;
                 case 4:
